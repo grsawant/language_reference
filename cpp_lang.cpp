@@ -1,6 +1,37 @@
 #include <iostream>
 /* Needed for setprecision() */
 #include <iomanip>
+#include <vector>
+std::vector<int> twoSum(std::vector<int>& nums, int target)
+{
+			int i, j;
+			std::vector<int> result;
+			for (i = 0; i <= sizeof(nums); ++i) {
+				for(j = 0;j <= sizeof(nums); ++j) {
+					if(i != j && (nums[i] + nums[j]) == target) {
+							result[0] = i;
+							result[1] = j;
+					}
+					return result;
+				}
+			}
+}
+void find_index_of_sum()
+{
+	std::vector<int> nums = {2,7,11,15};
+	int target = 9;
+	std::vector<int> result = twoSum(nums, target);
+	int first, second;
+	first = result[0];
+	second = result[1];
+	std::cout << first << " " << second << "\n";
+}
+int main()
+{
+	find_index_of_sum();
+	return 0;
+}
+
 void print_fahr_celsius_conv_using_for()
 {
 	double fahr,celsius;
@@ -41,11 +72,4 @@ void print_square(double x)
 void print_hello()
 {
 	std::cout<<"Hello, World!\n";
-}
-int main()
-{
-	print_hello();
-	print_square(1.234);
-	print_fahr_celsius_conv_using_while();
-	print_fahr_celsius_conv_using_for();
 }
